@@ -1,6 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 export default function LandingPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-emerald-300/60 selection:text-neutral-900">
       {/* NAVBAR */}
@@ -53,7 +57,7 @@ export default function LandingPage() {
               },
               {
                 title: 'Data Discovery & Migrations',
-                desc: 'On‑prem to cloud or hybrid migrations. Full-stack inventory, dependency mapping, and zero-downtime cutovers.'
+                desc: 'On-prem to cloud or hybrid migrations. Full-stack inventory, dependency mapping, and zero-downtime cutovers.'
               },
               {
                 title: 'Operational Stabilization',
@@ -61,19 +65,19 @@ export default function LandingPage() {
               },
               {
                 title: 'Project & Program Management',
-                desc: 'PMO setup, governance models, and oversight for multi‑stream initiatives. Proven methodologies for scope, schedule, and stakeholder alignment.'
+                desc: 'PMO setup, governance models, and oversight for multi-stream initiatives. Proven methodologies for scope, schedule, and stakeholder alignment.'
               },
               {
                 title: 'AI & GenAI Strategy',
-                desc: 'Practical roadmaps for AI adoption: use‑case selection, data readiness, model lifecycle management, and guardrails.'
+                desc: 'Practical roadmaps for AI adoption: use-case selection, data readiness, model lifecycle management, and guardrails.'
               },
               {
                 title: 'LLM / RAG Systems',
-                desc: 'Retrieval‑augmented generation pipelines, knowledge bases, and copilots integrated with enterprise data.'
+                desc: 'Retrieval-augmented generation pipelines, knowledge bases, and copilots integrated with enterprise data.'
               },
               {
                 title: 'Advisory & Fractional Leadership',
-                desc: 'Hands‑on guidance for CTO/CIO/VP teams. Partner ecosystem design and capability growth acceleration.'
+                desc: 'Hands-on guidance for CTO/CIO/VP teams. Partner ecosystem design and capability growth acceleration.'
               }
             ].map((card, i) => (
               <div key={i} className="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-6 hover:border-neutral-700">
@@ -92,7 +96,7 @@ export default function LandingPage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-neutral-800 p-6">
               <h3 className="font-semibold">Collaborative by Design</h3>
-              <p className="mt-2 text-neutral-300 text-sm">Transparent communication and active co‑creation. We bring clarity to complexity and momentum to execution.</p>
+              <p className="mt-2 text-neutral-300 text-sm">Transparent communication and active co-creation. We bring clarity to complexity and momentum to execution.</p>
             </div>
             <div className="rounded-2xl border border-neutral-800 p-6">
               <h3 className="font-semibold">Systems {'>'} Slides</h3>
@@ -103,7 +107,7 @@ export default function LandingPage() {
               <p className="mt-2 text-neutral-300 text-sm">Experienced practitioners who ship. Minimal overhead, rapid iteration, measurable value.</p>
             </div>
             <div className="rounded-2xl border border-neutral-800 p-6">
-              <h3 className="font-semibold">Outcome‑Driven</h3>
+              <h3 className="font-semibold">Outcome-Driven</h3>
               <p className="mt-2 text-neutral-300 text-sm">Every engagement ties back to clear metrics—stability, efficiency, compliance, or growth.</p>
             </div>
           </div>
@@ -122,7 +126,7 @@ export default function LandingPage() {
               },
               {
                 label: 'Datacenter & Cloud Migrations',
-                text: 'Delivered multi‑year migration programs across industries—on‑prem to cloud and hybrid modernization.'
+                text: 'Delivered multi-year migration programs across industries—on-prem to cloud and hybrid modernization.'
               },
               {
                 label: 'PCI-Compliant Architecture',
@@ -156,21 +160,86 @@ export default function LandingPage() {
                   <li>✉️ Email: ahram.lee@lee-consultants.com</li>
                 </ul>
               </div>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+
+              <form
+                className="space-y-4"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setStatus("sending");
+
+                  const form = e.currentTarget;
+                  const name = form.querySelector<HTMLInputElement>('input[name="name"]')?.value;
+                  const email = form.querySelector<HTMLInputElement>('input[name="email"]')?.value;
+                  const message = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]')?.value;
+
+                  try {
+                    const res = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ name, email, message }),
+                    });
+
+                    const data = await res.json();
+                    if (data.success) {
+                      setStatus("success");
+                      form.reset();
+                    } else {
+                      setStatus("error");
+                    }
+                  } catch (err) {
+                    console.error("Error submitting form:", err);
+                    setStatus("error");
+                  }
+                }}
+              >
                 <div>
-                  <label className="block text-sm mb-1">Name</label>
-                  <input className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="Your name" />
+                  <label className="block text-sm mb-1" htmlFor="name">Name</label>
+                  <input
+                    name="name"
+                    autoComplete="name"
+                    required
+                    className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60"
+                    placeholder="Your name"
+                  />
                 </div>
+
                 <div>
-                  <label className="block text-sm mb-1">Email</label>
-                  <input type="email" className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="you@company.com" />
+                  <label className="block text-sm mb-1" htmlFor="email">Email</label>
+                  <input
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60"
+                    placeholder="you@company.com"
+                  />
                 </div>
+
                 <div>
-                  <label className="block text-sm mb-1">What do you want to achieve?</label>
-                  <textarea rows={4} className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60" placeholder="A brief on goals, constraints, timeline…" />
+                  <label className="block text-sm mb-1" htmlFor="message">What do you want to achieve?</label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    required
+                    className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60"
+                    placeholder="A brief on goals, constraints, timeline…"
+                  />
                 </div>
-                <button className="w-full rounded-xl bg-emerald-400 px-4 py-2 font-semibold text-neutral-900 hover:bg-emerald-300">Send</button>
-                <p className="text-xs text-neutral-400">This demo form doesn’t submit yet. We’ll wire it to your email or CRM API next.</p>
+
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full rounded-xl bg-emerald-400 px-4 py-2 font-semibold text-neutral-900 hover:bg-emerald-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {status === "sending" ? "Sending…" : "Send"}
+                </button>
+
+                {status === "success" && (
+                  <p className="text-sm text-emerald-400">✅ Message sent successfully! We'll reply soon.</p>
+                )}
+                {status === "error" && (
+                  <p className="text-sm text-red-400">⚠️ Failed to send message. Please try again later.</p>
+                )}
               </form>
             </div>
           </div>
@@ -187,20 +256,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-
-      {/* ROADMAP NOTES (dev‑only, can be removed) */}
-      <div className="sr-only">
-        {`
-Future scaffolding plan:
-- Host on Vercel/Netlify/Cloudflare Pages; connect repo for CI.
-- Add /api/contact (Next.js or serverless) → send mail via SendGrid/Resend → ahram.lee@lee-consultants.com.
-- Optionally integrate with Notion, Airtable, or lightweight CRM for intake logging.
-- Add /blog with MDX; /case-studies; /lab (AI projects, SOPs).
-- Add analytics (Plausible/Umami). Add sitemap and OG images.
-- Add dark/light toggle and basic accessibility audit.
-- Add CMS option (Contentlayer, Tina, Sanity) if needed.
-        `}
-      </div>
     </div>
   );
 }
+
