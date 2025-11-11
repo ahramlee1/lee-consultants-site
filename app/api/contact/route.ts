@@ -1,33 +1,37 @@
-import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
+import sgMail from '@sendgrid/mail';
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-      tls: { ciphers: 'SSLv3' },
-    });
+    const msg = {
+      to: 'ahram.lee@lee-consultants.com', // where the form should send
+      from: 'no-reply@lee-consultants.com', // must match your verified SendGrid sender domain
+      subject: `New contact form submission from ${name}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+      html: `
+        <strong>Name:</strong> ${name}<br/>
+        <strong>Email:</strong> ${email}<br/>
+        <strong>Message:</strong><br/>
+        <p>${message}</p>
+      `,
+    };
 
-    await transporter.sendMail({
-      from: `"Lee Consultants Inquiry" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_TO,
-      subject: `Website Inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
-      replyTo: email,
-    });
-
-    return NextResponse.json({ success: true, message: 'Email sent successfully!' });
-  } catch (error) {
-    console.error('Email send error:', error);
-    return NextResponse.json({ success: false, message: 'Error sending email.' }, { status: 500 });
+    await sgMail.send(msg);
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    console.error('Error sending email:', error);
+    return NextResponse.json(
+      { success: false, message: 'Error sending email' },
+      { status: 500 }
+    );
   }
 }
 
