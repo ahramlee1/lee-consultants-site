@@ -114,6 +114,115 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* AI DISCOVERY & EXPERIMENTATION */}
+      <section id="ai-discovery" className="border-b border-neutral-800 bg-neutral-900/20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            Stage 1 — AI Discovery & Experimentation
+          </h2>
+          <p className="mt-3 text-neutral-300 text-sm sm:text-base max-w-3xl">
+            Before building AI, build <span className="text-emerald-400 font-medium">awareness.</span>
+            Lee Consultants helps enterprises see their full data, cost, and capability landscape — 
+            unifying it under a framework of <strong>autonomous data profiling</strong>,
+            ethical intelligence, and continuous learning.  
+            This is how raw data becomes a self-improving AI Factory.
+          </p>
+
+          <div className="mt-10 space-y-8">
+            {[
+              {
+                step: "1",
+                title: "Total Data Landscape Discovery",
+                desc: "Identify every data-producing system — on-prem, cloud, SaaS, data lakes, APIs, IoT, collaboration, telemetry, and shadow IT. Map ownership, sensitivity, and connectivity."
+              },
+              {
+                step: "2",
+                title: "Financial Intelligence (CapEx / OpEx / P&L)",
+                desc: "Tie each data system to its financial footprint: hardware, software, licensing, vendor contracts, cloud utilization, and labor — exposing hidden redundancies and under-used assets."
+              },
+              {
+                step: "3",
+                title: "Data Element & Dependency Inventory",
+                desc: "Profile schemas, lineage, update cadence, retention rules, and inter-dependencies to understand how information flows."
+              },
+              {
+                step: "4",
+                title: "Autonomous Data Profiling",
+                desc: "Use AI-driven profilers to autonomously interpret and score datasets for semantics, quality, anomalies, and business context — building a living metadata layer."
+              },
+              {
+                step: "5",
+                title: "Data Trust & Compliance Assessment",
+                desc: "Evaluate governance, access controls, sensitivity (PII/PCI/PHI), and lineage auditability to ensure responsible AI readiness."
+              },
+              {
+                step: "6",
+                title: "Dataset Profiling & Utilization Reporting",
+                desc: "Quantify value vs usage for each dataset and identify dark data (collected but unused)."
+              },
+              {
+                step: "7",
+                title: "Analytical Insight Extraction",
+                desc: "Apply exploratory analytics and ML to surface correlations, trendlines, and operational signals."
+              },
+              {
+                step: "8",
+                title: "Use-Case Opportunity Mapping",
+                desc: "Group insights into actionable AI/automation use cases aligned with strategic objectives — efficiency, CX, risk, growth."
+              },
+              {
+                step: "9",
+                title: "Inter-Dataset Commonality & Fusion Design",
+                desc: "Identify redundant or complementary datasets and design unified ‘fusion’ views for cross-domain intelligence."
+              },
+              {
+                step: "10",
+                title: "Systemic Waste & Efficiency Diagnostics",
+                desc: "Locate waste from reactive operations, duplicate storage, fragmented compute, or license inefficiencies."
+              },
+              {
+                step: "11",
+                title: "Pilot Opportunity Conversion",
+                desc: "Translate top waste items or insights into measurable AI pilots with clear ROI hypotheses."
+              },
+              {
+                step: "12",
+                title: "Ethical & Sustainability Calibration",
+                desc: "Evaluate ethical impact, carbon footprint, and workforce effects before scaling AI."
+              },
+              {
+                step: "13",
+                title: "Feedback Loop & Learning System",
+                desc: "Implement automated feedback on accuracy, adoption, and ROI; feed learned signals back into governance."
+              },
+              {
+                step: "14",
+                title: "AI Factory Release 1.0 → Productionalization",
+                desc: "Harden validated pilots with MLOps and versioned deployment playbooks."
+              },
+              {
+                step: "15",
+                title: "Iterate & Scale → Adaptive AI Factory",
+                desc: "Institutionalize continuous learning so each cycle improves data quality, efficiency, and strategic foresight."
+              },
+            ].map((item) => (
+              <div key={item.step} className="border border-neutral-800 rounded-2xl p-5 hover:border-neutral-700 bg-neutral-950/40">
+                <h3 className="font-semibold text-emerald-300">
+                  Step {item.step}. {item.title}
+                </h3>
+                <p className="mt-1 text-sm text-neutral-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-neutral-400 text-sm">
+              This is Stage 1 of our AI Factory model — where data, dollars, and decisions align to build a self-improving enterprise intelligence system.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* WORK */}
       <section id="work" className="border-b border-neutral-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
