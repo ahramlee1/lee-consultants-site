@@ -113,6 +113,160 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      
+      {/* AI FACTORY JOURNEY TIMELINE */}
+      <section id="ai-factory-timeline" className="border-b border-neutral-800 bg-neutral-950/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
+            The AI Factory Transformation Path
+          </h2>
+          <p className="mt-3 text-neutral-300 text-sm sm:text-base text-center max-w-3xl mx-auto">
+            From siloed data to an adaptive intelligence fabric. Each stage compounds learning, efficiency, and impact.
+          </p>
+
+          <div className="mt-14 relative">
+            {/* Horizontal line */}
+            <div className="absolute left-0 right-0 top-8 h-[2px] bg-gradient-to-r from-emerald-400/40 via-neutral-700 to-emerald-400/40" />
+
+            {/* Timeline items */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+              {[
+                {
+                  stage: "1",
+                  title: "AI Discovery & Experimentation",
+                  desc: "Identify and unify siloed data, establish visibility, and generate pilot opportunities.",
+                },
+                {
+                  stage: "2",
+                  title: "AI Operationalization",
+                  desc: "Deploy pilots into production with data pipelines, governance, and feedback mechanisms.",
+                },
+                {
+                  stage: "3",
+                  title: "AI Optimization & Scaling",
+                  desc: "Centralize data into hubs or fabrics, unify APIs, and scale AI capabilities enterprise-wide.",
+                },
+                {
+                  stage: "4",
+                  title: "AI Autonomy & Intelligence Fabric",
+                  desc: "Evolve toward a self-learning enterprise where data, models, and decisions continuously adapt.",
+                },
+              ].map((item, index) => (
+                <div key={item.stage} className="relative flex flex-col items-center text-center">
+                  {/* Node */}
+                  <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 border-2 border-emerald-400/60 text-emerald-300 font-semibold">
+                    {item.stage}
+                  </div>
+                  {/* Stage title */}
+                  <p className="mt-4 text-sm font-semibold text-neutral-100">{item.title}</p>
+                  {/* Description */}
+                  <p className="mt-2 text-xs text-neutral-400 max-w-[14rem]">{item.desc}</p>
+                  {/* Connector dots (for small screens stacked vertically) */}
+                  {index < 3 && (
+                    <div className="lg:hidden mt-8 w-[2px] h-8 bg-neutral-700 rounded-full" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-xs text-neutral-400 uppercase tracking-wide">
+              Improvement • Demonstration • Optimization • Transformation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* AI FACTORY TRANSFORMATION TIMELINE */}
+      <section id="ai-factory-timeline" className="relative border-b border-neutral-800 bg-neutral-950/30 overflow-hidden">
+        {/* Gradient performance arrow background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-transparent via-emerald-500/10 to-emerald-400/20 opacity-90" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center">
+            The AI Factory Transformation Path
+          </h2>
+          <p className="mt-3 text-neutral-300 text-sm sm:text-base text-center max-w-3xl mx-auto">
+            From siloed data to an adaptive intelligence fabric. Each stage compounds learning, efficiency, and impact.
+          </p>
+
+          {/* Axis labels */}
+          <div className="relative mt-10">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-xs text-neutral-500 uppercase tracking-wide">
+              Performance Impact ↑
+            </div>
+            <div className="absolute bottom-0 right-1/2 translate-x-1/2 text-xs text-neutral-500 uppercase tracking-wide">
+              Transformation Stage →
+            </div>
+          </div>
+
+          {/* Timeline core */}
+          <div className="mt-12 relative">
+            {/* Horizontal connector line */}
+            <div className="absolute left-0 right-0 top-8 h-[2px] bg-gradient-to-r from-emerald-400/40 via-neutral-700 to-emerald-400/40" />
+
+            {/* Stages */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+              {[
+                {
+                  stage: "1",
+                  title: "AI Discovery & Experimentation",
+                  desc: "Identify and unify siloed data, establish visibility, and generate pilot opportunities.",
+                },
+                {
+                  stage: "2",
+                  title: "AI Operationalization",
+                  desc: "Deploy pilots into production with data pipelines, governance, and feedback mechanisms.",
+                },
+                {
+                  stage: "3",
+                  title: "AI Optimization & Scaling",
+                  desc: "Centralize data into hubs or fabrics, unify APIs, and scale AI capabilities enterprise-wide.",
+                },
+                {
+                  stage: "4",
+                  title: "AI Autonomy & Intelligence Fabric",
+                  desc: "Evolve toward a self-learning enterprise where data, models, and decisions continuously adapt.",
+                },
+              ].map((item, index) => (
+                <div key={item.stage} className="relative flex flex-col items-center text-center">
+                  {/* Node */}
+                  <div className="relative z-10 flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 border-2 border-emerald-400/60 text-emerald-300 font-semibold shadow-lg shadow-emerald-500/10">
+                    {item.stage}
+                  </div>
+                  {/* Stage title */}
+                  <p className="mt-4 text-sm font-semibold text-neutral-100">{item.title}</p>
+                  {/* Description */}
+                  <p className="mt-2 text-xs text-neutral-400 max-w-[14rem]">{item.desc}</p>
+                  {/* Vertical connectors (for stacked layout) */}
+                  {index < 3 && (
+                    <div className="lg:hidden mt-8 w-[2px] h-8 bg-neutral-700 rounded-full" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-xs text-neutral-400 uppercase tracking-wide">
+              Improvement - Demonstration - Optimization - Transformation
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-6 py-3 font-semibold text-neutral-900 hover:bg-emerald-300 transition-colors"
+            >
+              Get Your AI Factory Roadmap
+            </a>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* AI DISCOVERY & EXPERIMENTATION */}
       <section id="ai-discovery" className="border-b border-neutral-800 bg-neutral-900/20">
