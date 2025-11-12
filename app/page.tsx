@@ -352,7 +352,9 @@ export default function LandingPage() {
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Tell us what you’re building</h2>
-                <p className="mt-3 text-neutral-300 text-sm">Reach out with a challenge, an idea, or a target outcome. We’ll reply within one business day.</p>
+                <p className="mt-3 text-neutral-300 text-sm">
+                  Reach out with a challenge, an idea, or a target outcome. We’ll reply within one business day.
+                </p>
                 <ul className="mt-6 text-sm text-neutral-300 space-y-2">
                   <li>📍 Based in Johns Creek, GA</li>
                   <li>🕘 Hours: Mon–Fri, 9am–6pm ET</li>
@@ -369,13 +371,14 @@ export default function LandingPage() {
                   const form = e.currentTarget;
                   const name = form.querySelector<HTMLInputElement>('input[name="name"]')?.value;
                   const email = form.querySelector<HTMLInputElement>('input[name="email"]')?.value;
+                  const phone = form.querySelector<HTMLInputElement>('input[name="phone"]')?.value; // ✅ added
                   const message = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]')?.value;
 
                   try {
                     const res = await fetch("/api/contact", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({ name, email, message }),
+                      body: JSON.stringify({ name, email, phone, message }), // ✅ send phone
                     });
 
                     const data = await res.json();
@@ -414,6 +417,19 @@ export default function LandingPage() {
                   />
                 </div>
 
+                {/* ✅ New phone number field */}
+                <div>
+                  <label className="block text-sm mb-1" htmlFor="phone">Phone</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    pattern="^[0-9+\-()\s]*$"
+                    className="w-full rounded-xl border border-neutral-800 bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400/60"
+                    placeholder="Your phone number (optional)"
+                  />
+                </div>
+
                 <div>
                   <label className="block text-sm mb-1" htmlFor="message">What do you want to achieve?</label>
                   <textarea
@@ -428,7 +444,7 @@ export default function LandingPage() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full rounded-xl bg-emerald-400 px-4 py-2 font-semibold text-neutral-900 hover:bg-emerald-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full rounded-xl bg-emerald-400 px-4 py-2 font-semibold text-neutral-900 hover:bg-emerald-300 disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
                 >
                   {status === "sending" ? "Sending…" : "Send"}
                 </button>
