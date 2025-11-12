@@ -33,7 +33,7 @@ export default function LandingPage() {
               We build technology strategies that deliver measurable results
             </h1>
             <p className="mt-6 text-lg text-neutral-300">
-              Lee Consultants partners with leaders to turn complex technology challenges into scalable systems, architectures, and measurable business outcomes. From large-scale migrations and PCI-compliant architectures to applied GenAI—we design, build, and operationalize.
+              Lee Consultants partners with leaders to turn complex technology challenges into scalable systems, architectures, and measurable business outcomes. From large-scale migrations and PCI-compliant architectures to applied GenAI - we design, build, and operationalize.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#contact" className="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-neutral-900 hover:bg-emerald-300">Start a conversation</a>
@@ -61,7 +61,7 @@ export default function LandingPage() {
               },
               {
                 title: 'Operational Stabilization',
-                desc: 'Turnaround programs for large-scale systems—resilience engineering, observability, and performance tuning.'
+                desc: 'Turnaround programs for large-scale systems - resilience engineering, observability, and performance tuning.'
               },
               {
                 title: 'Project & Program Management',
@@ -100,7 +100,7 @@ export default function LandingPage() {
             </div>
             <div className="rounded-2xl border border-neutral-800 p-6">
               <h3 className="font-semibold">Systems {'>'} Slides</h3>
-              <p className="mt-2 text-neutral-300 text-sm">We focus on real, operational deliverables—dashboards, scripts, playbooks, and reference architectures—not just PowerPoint.</p>
+              <p className="mt-2 text-neutral-300 text-sm">We focus on real, operational deliverables - dashboards, scripts, playbooks, and reference architectures - not just PowerPoint.</p>
             </div>
             <div className="rounded-2xl border border-neutral-800 p-6">
               <h3 className="font-semibold">Small Teams, Big Leverage</h3>
@@ -108,7 +108,7 @@ export default function LandingPage() {
             </div>
             <div className="rounded-2xl border border-neutral-800 p-6">
               <h3 className="font-semibold">Outcome-Driven</h3>
-              <p className="mt-2 text-neutral-300 text-sm">Every engagement ties back to clear metrics—stability, efficiency, compliance, or growth.</p>
+              <p className="mt-2 text-neutral-300 text-sm">Every engagement ties back to clear metrics - stability, efficiency, compliance, or growth.</p>
             </div>
           </div>
         </div>
@@ -208,11 +208,11 @@ export default function LandingPage() {
       <section id="ai-discovery" className="border-b border-neutral-800 bg-neutral-900/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Stage 1 — AI Discovery & Experimentation
+            Stage 1 - AI Discovery & Experimentation
           </h2>
           <p className="mt-3 text-neutral-300 text-sm sm:text-base max-w-3xl">
             Before building AI, build <span className="text-emerald-400 font-medium">awareness.</span>
-            Lee Consultants helps enterprises see their full data, cost, and capability landscape — 
+            Lee Consultants helps enterprises see their full data, cost, and capability landscape - 
             unifying it under a framework of <strong>autonomous data profiling</strong>,
             ethical intelligence, and continuous learning.  
             This is how raw data becomes a self-improving AI Factory.
@@ -223,12 +223,12 @@ export default function LandingPage() {
               {
                 step: "1",
                 title: "Total Data Landscape Discovery",
-                desc: "Identify every data-producing system — on-prem, cloud, SaaS, data lakes, APIs, IoT, collaboration, telemetry, and shadow IT. Map ownership, sensitivity, and connectivity."
+                desc: "Identify every data-producing system - on-prem, cloud, SaaS, data lakes, APIs, IoT, collaboration, telemetry, and shadow IT. Map ownership, sensitivity, and connectivity."
               },
               {
                 step: "2",
                 title: "Financial Intelligence (CapEx / OpEx / P&L)",
-                desc: "Tie each data system to its financial footprint: hardware, software, licensing, vendor contracts, cloud utilization, and labor — exposing hidden redundancies and under-used assets."
+                desc: "Tie each data system to its financial footprint: hardware, software, licensing, vendor contracts, cloud utilization, and labor - exposing hidden redundancies and under-used assets."
               },
               {
                 step: "3",
@@ -238,7 +238,7 @@ export default function LandingPage() {
               {
                 step: "4",
                 title: "Autonomous Data Profiling",
-                desc: "Use AI-driven profilers to autonomously interpret and score datasets for semantics, quality, anomalies, and business context — building a living metadata layer."
+                desc: "Use AI-driven profilers to autonomously interpret and score datasets for semantics, quality, anomalies, and business context - building a living metadata layer."
               },
               {
                 step: "5",
@@ -258,7 +258,7 @@ export default function LandingPage() {
               {
                 step: "8",
                 title: "Use-Case Opportunity Mapping",
-                desc: "Group insights into actionable AI/automation use cases aligned with strategic objectives — efficiency, CX, risk, growth."
+                desc: "Group insights into actionable AI/automation use cases aligned with strategic objectives - efficiency, CX, risk, growth."
               },
               {
                 step: "9",
@@ -307,7 +307,7 @@ export default function LandingPage() {
 
           <div className="mt-12 text-center">
             <p className="text-neutral-400 text-sm">
-              This is Stage 1 of our AI Factory model — where data, dollars, and decisions align to build a self-improving enterprise intelligence system.
+              This is Stage 1 of our AI Factory model - where data, dollars, and decisions align to build a self-improving enterprise intelligence system.
             </p>
           </div>
         </div>
@@ -325,7 +325,7 @@ export default function LandingPage() {
               },
               {
                 label: 'Datacenter & Cloud Migrations',
-                text: 'Delivered multi-year migration programs across industries—on-prem to cloud and hybrid modernization.'
+                text: 'Delivered multi-year migration programs across industries - on-prem to cloud and hybrid modernization.'
               },
               {
                 label: 'PCI-Compliant Architecture',
