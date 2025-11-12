@@ -124,10 +124,11 @@ export default function LandingPage() {
                 onSubmit={async (e) => {
                   e.preventDefault();
                   const form = e.currentTarget;
-                  const name = form.querySelector('input[placeholder="Your name"]')?.value;
-                  const email = form.querySelector('input[placeholder="you@company.com"]')?.value;
-                  const phone = form.querySelector('input[placeholder="Your phone number (optional)"]')?.value;
-                  const message = form.querySelector('textarea')?.value;
+
+                  const name = (form.querySelector('input[placeholder="Your name"]') as HTMLInputElement)?.value;
+                  const email = (form.querySelector('input[placeholder="you@company.com"]') as HTMLInputElement)?.value;
+                  const phone = (form.querySelector('input[placeholder="Your phone number (optional)"]') as HTMLInputElement)?.value;
+                  const message = (form.querySelector('textarea') as HTMLTextAreaElement)?.value;
 
                   try {
                     const res = await fetch("/api/contact", {
