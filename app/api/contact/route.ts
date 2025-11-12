@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, phone, message } = await req.json(); // ✅ include phone
 
     const msg = {
       to: 'ahram.lee@lee-consultants.com', // where the form should send
@@ -14,11 +14,14 @@ export async function POST(req: Request) {
       text: `
         Name: ${name}
         Email: ${email}
-        Message: ${message}
+        ${phone ? `Phone: ${phone}` : ''}
+        Message:
+        ${message}
       `,
       html: `
         <strong>Name:</strong> ${name}<br/>
         <strong>Email:</strong> ${email}<br/>
+        ${phone ? `<strong>Phone:</strong> ${phone}<br/>` : ''}
         <strong>Message:</strong><br/>
         <p>${message}</p>
       `,
