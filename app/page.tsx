@@ -211,7 +211,7 @@ export default function LandingPage() {
             Stage 1 - AI Discovery & Experimentation
           </h2>
           <p className="mt-3 text-neutral-300 text-sm sm:text-base max-w-3xl">
-            Before building AI, build <span className="text-emerald-400 font-medium">awareness.</span>
+            Before building AI, build <span className="text-emerald-400 font-medium">awareness. </span>
             Lee Consultants helps enterprises see their full data, cost, and capability landscape - 
             unifying it under a framework of <strong>autonomous data profiling</strong>,
             ethical intelligence, and continuous learning.  
