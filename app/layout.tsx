@@ -12,11 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Lee Consultants | Strategy-First, AI-Native, Execution-Obsessed",
   description: "Lee Consultants helps enterprises operationalize strategy with PCI-grade architecture, AI readiness, and measurable business outcomes.",
-  icons; {
-    icon: "favicon.ico",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
