@@ -130,7 +130,7 @@ export default function LandingPage() {
           {/* Axis labels */}
           <div className="relative mt-10">
             <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-left text-xs text-neutral-500 uppercase tracking-wide">
-              Performance Impact ↑
+              Performance Impact →
             </div>
             <div className="absolute bottom-0 right-1/2 translate-x-1/2 text-xs text-neutral-500 uppercase tracking-wide">
               Transformation Stage →
