@@ -25,23 +25,52 @@ export default function LandingPage() {
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+      <section
+        className="relative overflow-hidden border-b border-neutral-800 w-full h-[600px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero-banner.png')" }}
+      >
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 relative z-10">
           <div className="max-w-3xl">
-            <p className="mb-4 inline-flex items-center rounded-full border border-neutral-800 px-2.5 py-1 text-xs text-neutral-300">Strategy-first • AI-native • Execution-obsessed</p>
+            <p className="mb-4 inline-flex items-center rounded-full border border-neutral-800 px-2.5 py-1 text-xs text-neutral-300">
+              Strategy-first • AI-native • Execution-obsessed
+            </p>
+
             <h1 className="text-4xl sm:text-6xl font-bold leading-tight tracking-tight">
               We build technology strategies that deliver measurable results
             </h1>
+
             <p className="mt-6 text-lg text-neutral-300">
-              Lee Consultants partners with leaders to turn complex technology challenges into scalable systems, architectures, and measurable business outcomes. From large-scale migrations and PCI-compliant architectures to applied GenAI - we design, build, and operationalize.
+              Lee Consultants partners with leaders to turn complex technology challenges into scalable systems,
+              architectures, and measurable business outcomes. From large-scale migrations and PCI-compliant architectures
+              to applied GenAI – we design, build, and operationalize.
             </p>
+
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-neutral-900 hover:bg-emerald-300">Start a conversation</a>
-              <a href="#services" className="inline-flex items-center justify-center rounded-xl border border-neutral-800 px-5 py-3 font-semibold hover:bg-neutral-900/60">See services</a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-xl bg-em
+                erald-400 px-5 py-3 font-semibold text-neutral-900 hover:bg-emerald-300"
+              >
+                Start a conversation
+              </a>
+
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center rounded-xl border border-neutral-800 px-5 py-3 font-semibold hover:bg-neutral-900/60"
+              >
+                See services
+              </a>
             </div>
           </div>
         </div>
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
+
+        {/* Existing decorative radial fade (kept as-is) */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"
+        />
       </section>
 
       {/* SERVICES */}
