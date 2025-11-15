@@ -51,19 +51,19 @@ export default function LandingPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-xl bg-em
-                erald-400 px-5 py-3 font-semibold text-neutral-900 hover:bg-emerald-300"
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white hover:bg-emerald-400 transition"
               >
                 Start a conversation
               </a>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-xl border border-neutral-800 px-5 py-3 font-semibold hover:bg-neutral-900/60"
+                className="inline-flex items-center justify-center rounded-xl border border-neutral-800 px-5 py-3 font-semibold text-neutral-300 hover:bg-neutral-900/60 transition"
               >
                 See services
               </a>
             </div>
+
           </div>
         </div>
 
