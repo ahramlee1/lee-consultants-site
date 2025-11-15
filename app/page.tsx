@@ -24,48 +24,54 @@ export default function LandingPage() {
         </nav>
       </header>
 
-      {/* HERO */}
-      <section
-        className="relative overflow-hidden border-b border-neutral-800 w-full h-[600px] bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-banner.png')" }}
-      >
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+      {/* === HERO BANNER (Image Only) === */}
+        <section className="relative w-full h-[600px] overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/hero-banner.png')" }}
+          />
+        </section>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 relative z-10">
-          <div className="max-w-3xl">
-            <p className="mb-4 inline-flex items-center rounded-full border border-neutral-800 px-2.5 py-1 text-xs text-neutral-300">
+        {/* === HERO TEXT BELOW === */}
+        <section className="w-full bg-black pt-12 pb-16">
+          <div className="max-w-6xl mx-auto px-6">
+
+            {/* Tagline */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm text-white mb-6">
               Strategy-first • AI-native • Execution-obsessed
-            </p>
+            </div>
 
-            <h1 className="text-4xl sm:text-6xl font-bold leading-tight tracking-tight">
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight max-w-3xl mb-4">
               We build technology strategies that deliver measurable results
             </h1>
 
-            <p className="mt-6 text-lg text-neutral-300">
-              Lee Consultants partners with leaders to turn complex technology challenges into scalable systems,
-              architectures, and measurable business outcomes. From large-scale migrations and PCI-compliant architectures
-              to applied GenAI – we design, build, and operationalize.
+            {/* Subheadline */}
+            <p className="text-base md:text-lg text-white/80 max-w-3xl mb-8">
+              Lee Consultants partners with leaders to turn complex technology challenges into scalable
+              systems, architectures, and measurable business outcomes. From large-scale migrations and
+              PCI-compliant architectures to applied GenAI — we design, build, and operationalize.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            {/* CTA Buttons */}
+            <div className="flex gap-4">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white hover:bg-emerald-400 transition"
+                href="/contact"
+                className="px-5 py-2.5 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-500 transition"
               >
                 Start a conversation
               </a>
-
               <a
-                href="#services"
-                className="inline-flex items-center justify-center rounded-xl border border-neutral-800 px-5 py-3 font-semibold text-neutral-300 hover:bg-neutral-900/60 transition"
+                href="/services"
+                className="px-5 py-2.5 rounded-lg bg-white/10 text-white font-medium border border-white/20 hover:bg-white/20 transition"
               >
                 See services
               </a>
             </div>
 
           </div>
-        </div>
+        </section>
+
 
         {/* Existing decorative radial fade (kept as-is) */}
         <div
